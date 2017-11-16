@@ -43,14 +43,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var person=[{
-    firstName: 'John',
-    last:'Doe'
-},
-    {
-        firstName: 'Flora',
-        last:'Bora'
-    }]
+
 
 //JSON.parse(person);
 //var women=

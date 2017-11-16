@@ -8,8 +8,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login',function(req, res) {
-
-    res.render('massage', {title: req.body.user_name});
+    var person=[{
+        firstName: 'Ifat',
+        last:'Noyman'
+    },
+        {
+            firstName: 'Michal',
+            last:' Shawat'
+        },
+        {
+            firstName: 'Galit',
+            last:' Vaknin'
+        }
+    ]
+    res.render('massage', {user: req.body.user_name , people: person});
 });
 
 
