@@ -4,6 +4,5 @@ extends layout
 block content
    h1 #{user}
    ul
-      for p in people
-         li=p.userName+' '+p.pass
-
+       for post in pagePosts
+           li = post
