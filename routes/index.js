@@ -7,8 +7,9 @@ router.get('/', function(req, res, next) {
   //res.send("Hello World")
 });
 
+var dict = []; // create an empty array
+
 router.post('/login',function(req, res) {
-    var dict = []; // create an empty array
 
     var person=[{
         userName:req.body.user_name ,
