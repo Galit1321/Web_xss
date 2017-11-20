@@ -8,21 +8,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login',function(req, res) {
+    var dict = []; // create an empty array
+
     var person=[{
-        firstName: 'Ifat',
-        last:'Noyman'
-    },
-        {
-            firstName: 'Michal',
-            last:' Shawat'
-        },
-        {
-            firstName: 'Galit',
-            last:' Vaknin'
-        }
+        userName:req.body.user_name ,
+        pass:req.body.password
+    }
     ]
+
+    dict.push(person);
     res.render('massage', {user: req.body.user_name , people: person});
 });
+
+
 
 
 module.exports = router;
