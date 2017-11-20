@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p(name="d") Welcome the #{title}
-  form(name="Login", method="POST" action="/login" )
+  form(name="Login", method="GET" action="/login" )
     div.input
       span.label Title
       input(type="text", name="user_name")
