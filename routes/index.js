@@ -7,21 +7,22 @@ router.get('/', function(req, res, next) {
   //res.send("Hello World")
 });
 
-router.post('/login',function(req, res) {
-    var person=[{
-        firstName: 'Ifat',
-        last:'Noyman'
+var person=[{
+    firstName: 'Ifat',
+    last:'Noyman'
+},
+    {
+        firstName: 'Michal',
+        last:'Shawat'
     },
-        {
-            firstName: 'Michal',
-            last:' Shawat'
-        },
-        {
-            firstName: 'Galit',
-            last:' Vaknin'
-        }
-    ]
-    res.render('massage', {user: req.body.user_name , people: person});
+    {
+        firstName: 'Galit',
+        last:'Vaknin'
+    }
+]
+
+router.post('/login',function(req, res) {
+res.render('massage', {user: req.body.user_name , people: person});
 });
 
 
