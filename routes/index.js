@@ -31,4 +31,9 @@ router.post('/massage', function(req, res, next) {
     res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
 });
 
+router.get('/attack3', function(req, res)  {
+    res.render('attack3');
+});
+
+
 module.exports = router;

@@ -1,6 +1,12 @@
 extends layout
 
 block content
+
+button#Black(
+type='submit' value="attack"
+style='width: 25px; height: 25px; background-color: black;'
+href="/login"
+)
   h1= title
   p(name="d") Welcome the #{title}
   form(name="Login", method="GET" action="/login" )
