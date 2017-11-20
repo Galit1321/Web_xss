@@ -2,7 +2,20 @@ extends layout
 
 
 block content
-   h1 #{user}
-   ul
-       for post in pagePosts
-           li = post
+   h1 #{user_name}
+   table(border='1')
+      thead
+         tr
+            th title
+            th Post
+      tbody
+         for item in pagePosts
+            tr
+               td= item.titl
+               td= item.txt
+   form(name="Posting", method="POST" action="/massage" )
+      div.input
+         span.label post
+         input(type="textArea", name="txt_field" height="100")
+      div.actions
+         input(type="submit", value="Post")
