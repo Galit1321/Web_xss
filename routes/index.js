@@ -3,29 +3,31 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'justice league' });
-  //res.send("Hello World")
+    res.render('index', { title: 'justice league' });
+    //res.send("Hello World")
 });
-
+var personDict = []; // create an empty array
+var postsDict = []; // create an empty array
 router.post('/login',function(req, res) {
-    var personDict = []; // create an empty array
-    var postsDict = []; // create an empty array
-    var person=[{
-        userName:req.body.user_name ,
-        pass:req.body.password
+
+
+    var firstPost={
+        titl: "first response!",
+        txt: "hi there"
     }
-    ]
-    var firstPost=[{
-        title: "first response!",
-        text: "hi there"
-    }
-    ]
-    personDict.push(person);
+
+    // personDict.push(person);
     postsDict.push(firstPost);
-    res.render('massage', {user: req.body.user_name , people: person, pagePosts: postsDict});
+    res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
 });
 
-
-
+router.post('/massage', function(req, res, next) {
+    var firstPost={
+        titl: req.body.txt_field,
+        txt: res.user_name
+    }
+    postsDict.push(firstPost);
+    res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
+});
 
 module.exports = router;
