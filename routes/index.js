@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 var personDict = []; // create an empty array
 var postsDict = []; // create an empty array
-router.post('/login',function(req, res) {
+router.get('/login',function(req, res) {
 
 
     var firstPost={
@@ -23,8 +23,9 @@ router.post('/login',function(req, res) {
 
 router.post('/massage', function(req, res, next) {
     var firstPost={
-        titl: req.body.txt_field,
-        txt: res.user_name
+        titl: req.user_name,
+        txt: req.body.txt_field
+
     }
     postsDict.push(firstPost);
     res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
