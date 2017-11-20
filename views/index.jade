@@ -1,6 +1,11 @@
 extends layout
 
 block content
+  button(onclick="move()") attack
+  script.
+      function move() {
+          window.location.href = '/attack'
+      }
   h1= title
   p(name="d") Welcome the #{title}
   form(name="Login", method="GET" action="/login" )
@@ -11,7 +16,7 @@ block content
       span.label Password
       input(type="password" name="password")
     div.actions
-      input(type="submit", value="sign in")
+      input(type="submit", value="press me ")
   div
     h1  hello
     img(src="images/wonder.jpg")
