@@ -2,7 +2,16 @@ extends layout
 
 
 block content
-   h1 #{user}
+   h1 hi #{user}, welcome to our blog!
    ul
+       table
       for p in people
          li=p.firstName+' '+p.last
+   div.input
+      span.label Title:
+      input(type="text", name="title")
+   div.input
+      span.label Post:
+      input(type="textAria" name="post")
+   div.actions
+      input(type="submit", value="post")
