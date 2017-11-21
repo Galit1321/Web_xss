@@ -15,13 +15,12 @@ router.get('/login',function(req, res) {
         titl: "first response!",
         txt: "hi there"
     }
-
     // personDict.push(person);
     postsDict.push(firstPost);
-    res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
+    res.render('massage', {title: req.query.user_name, pagePosts: postsDict});
 });
 
-router.post('/massage', function(req, res, next) {
+router.post('/', function(req, res, next) {
     var firstPost={
         titl: req.user_name,
         txt: req.body.txt_field
@@ -32,9 +31,7 @@ router.post('/massage', function(req, res, next) {
 });
 
 router.get('/attack', function(req, res){
-    res.render('attack3', {
-        title: 'Home'
-    });
+    res.render('attack3', {title: 'Home',user_name: 'banana'});
 });
 
 
