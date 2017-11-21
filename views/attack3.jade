@@ -1,4 +1,9 @@
 extends layout
 
 block content
-        h1 welcome to the other page! #{userName}
+        h1 welcome to the other page!
+        p enter your name:
+        input(type='text' id = 'txtBox' onkeyup='myFunction()')
+        p your input:
+            span(id='target')
+        h1 hi #{txtBox}
