@@ -15,14 +15,26 @@ router.get('/login',function(req, res) {
         titl: "first response!",
         txt: "hi there"
     }
-    // personDict.push(person);
     postsDict.push(firstPost);
-    res.render('massage', {title: req.query.user_name, pagePosts: postsDict});
+    res.render('massage', {title: req.body.user_name, pagePosts: postsDict});
+    //res.send(req.body.user_name,req.body.password);
 });
 
-router.post('/', function(req, res, next) {
+router.get('/attack2',function(req, res) {
+
+
     var firstPost={
-        titl: req.user_name,
+        titl: "first response!",
+        txt: "hi there"
+    }
+    postsDict.push(firstPost);
+    res.render('attack2', {name: req.query.user_name});
+    //res.send(req.body.user_name);
+});
+
+router.post('/massage', function(req, res, next) {
+    var firstPost={
+        titl: req.body.user_name,
         txt: req.body.txt_field
 
     }
