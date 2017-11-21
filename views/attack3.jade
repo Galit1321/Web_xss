@@ -1,8 +1,17 @@
 extends layout
 
+
+
 block content
+
+        block js
+                script.
+                    function myFunction() {
+                        var x = document.getElementById('txtBox').value;
+                        document.getElementById('target').innerHTML = x;
+                    }
         h1 welcome to the other page!
         p write your name:
-        textarea(id = 'txtBox' onkeyup="myFunction()")
+        textarea(id='txtBox' onkeyup='myFunction()')
         p(id='target') your input:
         h1 hi #{txtBox}
