@@ -2,8 +2,7 @@ extends layout
 
 block content
         h1 welcome to the other page!
-        p enter your name:
-        input(type='text' id = 'txtBox' onkeyup='myFunction()')
-        p your input:
-            span(id='target')
+        p write your name:
+        textarea(id = 'txtBox' onkeyup="myFunction()")
+        p(id='target') your input:
         h1 hi #{txtBox}
