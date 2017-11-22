@@ -9,8 +9,13 @@ block content
                         var x = document.getElementById('txtBox').value;
                         document.getElementById('target').innerHTML = x;
                     }
-        h1 welcome to the other page!
-        p write your name:
+        h1 welcome to the DOM based XSS attack page!
+        p examples for attacks: (add < and close with the right tag)
+            br
+            | button onmouseover="alert(123)">hi
+            br
+            | b onmouseover=alert('Wufff!')>click me!
+        p enter your name:
         textarea(id='txtBox' onkeyup='myFunction()')
-        p(id='target') your input:
-        h1 hi #{txtBox}
+        h1 hello,
+        h1(id='target') output

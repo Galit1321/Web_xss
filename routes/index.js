@@ -3,22 +3,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'justice league' });
+    res.render('index', { title: 'JUSTICE LEAGUE' });
     //res.send("Hello World")
 });
 var personDict = []; // create an empty array
 var postsDict = []; // create an empty array
 router.get('/login',function(req, res) {
-    var firstPost={
-        titl: "first response!",
-        txt: "hi there"
-    }
-    postsDict.push(firstPost);
-    res.render('massage', {us_name: req.body.u_name, pagePosts: postsDict});
+    res.render('massage', {title: req.body.user_name, pagePosts: postsDict});
     //res.send(req.body.user_name,req.body.password);
 });
 
 router.get('/attack2',function(req, res) {
+
+
     var firstPost={
         titl: "first response!",
         txt: "hi there"
@@ -35,7 +32,7 @@ router.post('/massage', function(req, res, next) {
 
     }
     postsDict.push(firstPost);
-    res.render('massage', {title: req.body.u_name , pagePosts: postsDict});
+    res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
 });
 
 router.get('/attack', function(req, res){
