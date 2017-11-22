@@ -36,6 +36,7 @@ router.post('/massage', function(req, res, next) {
 });
 
 router.get('/attack', function(req, res){
+
     res.render('attack3', {title: 'Home',user_name: 'banana'});
 });
 

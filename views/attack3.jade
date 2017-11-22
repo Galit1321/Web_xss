@@ -2,7 +2,11 @@ extends layout
 
 
 block content
+    a(href="#picture=girl")
+        button(type="button") create new post
     script.
+        var pose = document.URL.indexOf("picture=")+8;
+        document.getElementById('London').innerHTML = document.URL.substring(pose,document.URL.length);
         function openCity(evt, cityName) {
             // Declare all variables
             var i, tabcontent, tablinks;
