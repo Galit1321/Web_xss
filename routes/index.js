@@ -14,7 +14,7 @@ router.get('/login',function(req, res) {
         txt: "hi there"
     }
     postsDict.push(firstPost);
-    res.render('massage', {title: req.body.u_name, pagePosts: postsDict});
+    res.render('massage', {title: req.body.u_name});
     //res.send(req.body.user_name,req.body.password);
 });
 

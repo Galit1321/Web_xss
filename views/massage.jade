@@ -4,25 +4,33 @@ extends layout
 block content
    block js
       script.
-          function buildTable(pagePosts) {
-              var Body = document.getElementById("Main");
-              var tbl = document.createElement("table");
-              var tblBody = document.createElement("tbody");
+          var pagePosts = []; // create an empty array
+          function buildTable() {
+              var tblBody = document.getElementById("tbody");
               for (p in pagePosts) { /////////////NEED to loop in pagePost but dont find what is it and all member undefined
                   var cell = document.createElement("tr");
-                  cell.setAttribute('id', p.txt)
+                  cell.innerHTML=p.txt;
+                  cell.style.width="50px";
+                  cell.style.height="50px";
                   tblBody.appendChild(cell)
               }
-              tbl.appendChild(tblBody);
-              Body.appendChild(tbl);
+
+          }
+          function addToDict() {
+            var x = document.getElementById('txt_box').value;
+            var firstPost = {
+                titl: "first response!",
+                txt: "hi there"
+              }
+              pagePosts.push(firstPost);
           }
 
    h1(name="h12") hi #{title}!
    div(id="Main")
-   button(name="Post" id="btn" onclick="buildTable('#{pagePosts}')") Press Me
-   form(name="Posting", method="POST" action="/massage" )
-      div.input
-         span.label post
-         input(type="textArea",id="txt_f" name="txt_field" height="100")
-      div.actions
-         input(name="btn" type="submit" )
+       button(name='postcom' id='btn22' onclick='addToDict()')
+       textarea(id='txt_box')
+       table
+           tbody(id='tbody')
+
+   button(name="getPost" id="btn" onclick='buildTable()') Press Me
+
