@@ -3,6 +3,11 @@ extends layout
 
 block content
    h1 hi #{title}!
+   p examples for attacks: (add < and close with the right tag)
+      br
+      |button onmouseover="alert(123)">hi
+      br
+      | b onmouseover=alert('Wufff!')>click me!
    table(border='1')
       thead
          tr
@@ -16,7 +21,7 @@ block content
             tr
                td= item.titl
                td= item.txt
-            !{item.txt}
+            p !{item.txt}
    form(name="Posting", method="POST" action="/massage" )
       div.input
          span.label post

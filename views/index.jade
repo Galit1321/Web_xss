@@ -1,29 +1,33 @@
 extends layout
 
 block content
-  button(onclick="move()") attack
-  script.
-      function move() {
-          window.location.href = '/attack'
-      }
   h1= title
-  p(name="d") Welcome the #{title}
+  p(name="d") Welcome to the #{title}
   form(name="Login", method="GET" action="/login" )
     div.input
-      span.label Title
+      span.label User Name
       input(type="text", name="u_name")
     div.input
       span.label Password
       input(type="password" name="password")
     div.actions
-      input(type="submit", value="press me ")
+      input(type="submit", value="Persistent XSS")
+  br
+  br
+  br
   form(name="Login", method="GET" action="/attack2" )
-      div.input
-              span.label Title
-              input(type="text", name="user_name")
-          div.actions
-              input(type="submit", value="press me ")
+    div.input
+            span.label User Name
+            input(type="text", name="user_name")
+        div.actions
+            input(type="submit", value="Reflected XSS")
+  br
+  br
+  button(onclick="move()") DOM-based XSS
+  script.
+      function move() {
+          window.location.href = '/attack'
+      }
   div
-    h1  hello
     img(src="images/wonder.jpg")
 
