@@ -35,9 +35,9 @@ router.post('/massage', function(req, res, next) {
     res.render('massage', {user_name: req.body.user_name , pagePosts: postsDict});
 });
 
-router.get('/attack', function(req, res){
+router.get('/attack/:pic', function(req, res){
 
-    res.render('attack3', {title: 'Home',user_name: 'banana'});
+    res.render('attack3', {pic:"picture"});
 });
 
 
