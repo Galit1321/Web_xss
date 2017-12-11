@@ -51,4 +51,17 @@ block content
             h3 Paris
             p Paris is the capital of France.div(id = "Tokyo" class= "tabcontent")
             h3 Tokyo
-            p Tokyo is the capital of Japan.
+            p Tokyo is the capital of Japan.function chooseTab(num) {
+                var maindiv = document.getElementById("tabContent");
+                var image2 = document.getElementById("image2");
+                image2.setAttribute('src', "images/city" + num + ".jpg");
+                //maindiv.appendChild(image2);
+            }
+            chooseTab('1');
+            h1 Gallery of pic
+
+            div(class = "tab" id = "tab1" onclick = "chooseTab('1')") London
+            div(class = "tab" id = "tab2" onclick = "chooseTab('2')") Paris
+            div(class = "tab" id = "tab3" onclick = "chooseTab('3')") Tokyo
+            div(id = "tabContent" class = "tab")
+            image(id = "image2")

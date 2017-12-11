@@ -26,7 +26,7 @@ block content
   button(onclick="move()") DOM-based XSS
   script.
       function move() {
-          window.location.href = '/attack'
+          window.location.href = '/attack/picture=1';
       }
   div
     img(src="images/wonder.jpg")
