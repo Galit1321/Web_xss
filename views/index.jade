@@ -23,11 +23,12 @@ block content
             input(type="submit", value="Reflected XSS")
   br
   br
-  button(onclick="move()") DOM-based XSS
-  script.
-      function move() {
-          window.location.href = '/attack/picture=1';
-      }
+  form(name="Login", method="GET" action="/attack" )
+      div.input
+          span.label Name
+          input(type="text", name="user_name")
+      div.actions
+          input(type="submit", value="DOM-based XSS")
   div
     img(src="images/wonder.jpg")
 
