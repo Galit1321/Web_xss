@@ -47,4 +47,4 @@ write this after your name in the URL
 
 ## Acknowledgments
 
-* Bar-Ilan University
+* The BIU Center for Research in Applied Cryptography and Cyber Security in Bar-Ilan University
