@@ -22,7 +22,7 @@ block content
                td= item.titl
                td= item.txt
             p !{item.txt}
-   form(name="Posting", method="POST" action="/massage" )
+   form(name="Posting", method="POST" action="/persistentXSS" )
       div.input
          span.label post
          input(type="textArea", name="txt_field" height="100")
