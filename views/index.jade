@@ -15,7 +15,7 @@ block content
   br
   br
   br
-  form(name="Login", method="GET" action="/attack2" )
+  form(name="Login", method="GET" action="/reflectedXSS" )
     div.input
             span.label User Name
             input(type="text", name="user_name")
@@ -23,7 +23,7 @@ block content
             input(type="submit", value="Reflected XSS")
   br
   br
-  form(name="Login", method="GET" action="/attack" )
+  form(name="Login", method="GET" action="/DOMbasedXSS" )
       div.input
           span.label Name
           input(type="text", name="user_name")
